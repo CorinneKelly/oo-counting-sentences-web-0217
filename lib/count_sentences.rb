@@ -2,19 +2,23 @@ require 'pry'
 
 class String
 
+
   def sentence?
-    
+    self.end_with?(".")
   end
+
 
   def question?
-
+    self.end_with?("?")
   end
 
-  def exclamation?
 
+  def exclamation?
+    self.end_with?("!")
   end
 
   def count_sentences
-
+  	self.split(/[.?!]/).delete_if{|obj| obj == ""}.count
   end
+
 end
